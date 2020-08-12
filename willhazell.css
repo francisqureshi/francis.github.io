@@ -33,6 +33,6 @@
   --plyr-color-main: #000000;
 }
 
-.plyr{
+.plyr, .preview-vimeo-embed video{
     border-radius: 4px;
 }
