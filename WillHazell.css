@@ -1,0 +1,38 @@
+/* Reset Webflow’s a color */
+.single-nav-bar a { 
+	text-decoration:inherit !important; 
+	color: inherit !important; 
+}
+
+
+/*###       Justify Fix     ###*/
+.fulljustify {
+  text-align: justify;
+}
+.fulljustify:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+/*###       Img Hover       ###*/
+
+#FakeBoris:hover + .fake-boris .img_gallery{
+  display: block;
+}
+ 
+/*###       Cursors         ###*/
+  
+.plyr__video-embed, iframe, .videodiv, .controlblocker, .previewvideo  {
+  cursor: url("https://uploads-ssl.webflow.com/5e0898430d37a1428029df27/5f0f5a3062201951ffea1c4c_Play_Cursor_64x64.png"), auto !important;  
+}
+
+/*###       Plyr            ###*/
+
+:root {
+  --plyr-color-main: #000000;
+}
+
+.plyr{
+    border-radius: 4px;
+}
