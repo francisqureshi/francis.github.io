@@ -24,6 +24,7 @@ controls: [
           'duration', // The full duration of the media
           'captions', // Toggle captions
           'fullscreen', // Toggle fullscreen
+          'volume',
          ],
 
 
