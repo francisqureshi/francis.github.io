@@ -23,8 +23,8 @@ controls: [
           'current-time', // The current time of playback
           'duration', // The full duration of the media
           'captions', // Toggle captions
-          'fullscreen', // Toggle fullscreen
           'volume',
+          'fullscreen', // Toggle fullscreen
          ],
 
 
