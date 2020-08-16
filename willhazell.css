@@ -5,9 +5,12 @@
 }
 
 
-/* minimum font size */
-*{
+/* minimum desktop font size */
+
+@media (min-width: 700px) {
+	*{
   font-size: min(14px);
+	}
 }
 
 
