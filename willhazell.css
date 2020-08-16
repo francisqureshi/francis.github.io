@@ -5,6 +5,12 @@
 }
 
 
+/* minimum font size */
+*{
+  font-size: min(12px);
+}
+
+
 /*###       Justify Fix     ###*/
 .fulljustify {
   text-align: justify;
