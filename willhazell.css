@@ -56,3 +56,17 @@
   pointer-events: all !important;
 
 }
+
+
+/* Will DVD Screensaver */
+
+.marquee {
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.logo {
+  width:100px;
+}
