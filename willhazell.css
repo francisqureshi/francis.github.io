@@ -18,11 +18,12 @@
 .fulljustify {
   text-align: justify;
 }
-.fulljustify:after {
+
+/* .fulljustify:after {
   content: "";
   display: inline-block;
   width: 100%;
-}
+} */
 
 /*###       Img Hover       ###*/
 
