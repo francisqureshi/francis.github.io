@@ -48,6 +48,11 @@ Webflow.push(function() {
 
 
 // WIll face DVD screensaver
+var Webflow = Webflow || [];
+Webflow.push(function () {
+	// DOMready has fired
+ 	 // May now use jQuery and Webflow api
+	
 (function ($, window, undefined) {
 	$.fn.marqueeify = function (options) {
 		var settings = $.extend({
@@ -122,4 +127,7 @@ $(document).ready( function() {
 			$('.marquee .logo').css('color', newColor);
 		}
 	});
+});
+
+	
 });
