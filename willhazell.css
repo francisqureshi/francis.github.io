@@ -50,5 +50,8 @@
 }
 
 .plyr__video-embed iframe {
-	pointer-events: all !important;
+  /* this makes the ui clickable */
+  z-index: 30;
+  pointer-events: all !important;
+
 }
