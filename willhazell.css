@@ -32,9 +32,9 @@
  
 /*###       Cursors         ###*/
   
-.plyr__video-embed, iframe, .videodiv, .controlblocker, .previewvideo  {
+/* .plyr__video-embed, iframe, .videodiv, .controlblocker, .previewvideo  {
   cursor: url("https://uploads-ssl.webflow.com/5e0898430d37a1428029df27/5f353fc4b89a6a4b2986a420_Play_Cursor_32x32.png"), auto !important;  
-}
+} */
 
 /*###       Plyr            ###*/
 
