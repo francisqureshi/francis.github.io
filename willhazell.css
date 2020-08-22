@@ -63,7 +63,7 @@
 .marquee {
   display: block;
   left: 0;
-  position: absolute;
+  position: relative;
   top: 0;
 }
 
