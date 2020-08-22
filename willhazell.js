@@ -51,83 +51,111 @@ Webflow.push(function() {
 var Webflow = Webflow || [];
 Webflow.push(function () {
 	// DOMready has fired
- 	 // May now use jQuery and Webflow api
-	
-(function ($, window, undefined) {
-	$.fn.marqueeify = function (options) {
-		var settings = $.extend({
-			horizontal: true,
-			vertical: true,
-			speed: 50, // In pixels per second
-			container: $(this).parent(),
-			bumpEdge: function () {}
-		}, options);
-		
-		return this.each(function () {
-			var containerWidth, containerHeight, elWidth, elHeight, move, getSizes,
-				$el = $(this);
-
-			getSizes = function () {
-				containerWidth = settings.container.outerWidth();
-				containerHeight = settings.container.outerHeight();
-				elWidth = $el.outerWidth();
-				elHeight = $el.outerHeight();
-			};
-
-			move = {
-				right: function () {
-					$el.animate({left: (containerWidth - elWidth)}, {duration: ((containerWidth/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
-						settings.bumpEdge();
-						move.left();
-					}});
-				},
-				left: function () {
-					$el.animate({left: 0}, {duration: ((containerWidth/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
-						settings.bumpEdge();
-						move.right();
-					}});
-				},
-				down: function () {
-					$el.animate({top: (containerHeight - elHeight)}, {duration: ((containerHeight/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
-						settings.bumpEdge();
-						move.up();
-					}});
-				},
-				up: function () {
-					$el.animate({top: 0}, {duration: ((containerHeight/settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
-						settings.bumpEdge();
-						move.down();
-					}});
-				}
-			};
-
-			getSizes();
-
-			if (settings.horizontal) {
-				move.right();
-			}
-			if (settings.vertical) {
-				move.down();
-			}
-
-      // Make that shit responsive!
-      $(window).resize( function() {
-        getSizes();
-      });
-		});
-	};
-})(jQuery, window);
-
-$(document).ready( function() {
-
-	$('.marquee').marqueeify({
-    speed: 200,
-		bumpEdge: function () {
-			var newColor = "hsl(" + Math.floor(Math.random()*360) + ", 100%, 50%)";
-			$('.marquee .logo').css('color', newColor);
+ 	// May now use jQuery and Webflow api
+	function setupLogo(){
+	sW = $(window).width();
+	sH = $(window).height();
+	var Engine = Matter.Engine,
+	    Composites = Matter.Composites,
+	    Runner = Matter.Runner,
+	    MouseConstraint = Matter.MouseConstraint,
+	    Mouse = Matter.Mouse,
+	    Events = Matter.Events,
+	    World = Matter.World,
+	    Common = Matter.Common,
+			Composite = Matter.Composite,
+	    Constraint = Matter.Constraint,
+	    Render = Matter.Render,
+	    Body = Matter.Body,
+	    Bodies = Matter.Bodies;
+	var engine = Engine.create($('#engine'));
+	var render = Render.create({
+	    element: $('#engine')[0],
+	    engine: engine,
+	    options: {
+	        width: sW,
+	        height: sH,
+			showAngleIndicator: true,
+			showCollisions: true,
+			showVelocity: true
 		}
+	});	
+	Render.run(render);
+	var top = Bodies.rectangle(sW, -50, sW*2, 100, { isStatic: true, density: 1 });
+	var right = Bodies.rectangle(sW + 50, sH/2, 100, sH*3, { isStatic: true, density: 1});
+	var bottom = Bodies.rectangle(sW, sH + 50, sW*2, 100, { isStatic: true, density: 1});
+	var left = Bodies.rectangle(-50, sH/2, 100, sH*3, { isStatic: true, density: 1 });
+	var shape = Bodies.circle(sW/2, sH/2,$('#logo').width()/2, {
+		restitution: 1,
+		friction: 0,
+		frictionAir: 0,
+		density: 0.001,
+		inertia: Infinity,
 	});
+	engine.world.gravity.x = 0;
+	engine.world.gravity.y = 0;
+	World.add(engine.world, [
+	    top,
+	    right,
+	    left,
+	    bottom,
+	    shape
+	]);
+	runner = Engine.run(engine)
+	updateLogo();
+	function updateLogo() {
+		TweenMax.set($('#logo'), {top:shape.position.y, left:shape.position.x, x:'-50%', y: '-50%', transformOrigin:'50% 50%'});								
+		$logoMove = requestAnimationFrame(updateLogo);
+	} 	
+	
+	var resetBounds = function(){
+		Runner.stop(runner);
+		Runner.stop(engine);
+		TweenMax.killAll();
+		$('#engine canvas').remove();
+		cancelAnimationFrame($logoMove);
+		setupLogo();
+	};
+var rtime;
+var timeout = false;
+var delta = 200;
+$(window).resize(function() {
+    rtime = new Date();
+    if (timeout === false) {
+        timeout = true;
+        setTimeout(resizeend, delta);
+    }
 });
 
-	
+function resizeend() {
+    if (new Date() - rtime < delta) {
+        setTimeout(resizeend, delta);
+    } else {
+        timeout = false;
+				resetBounds();
+    }               
+}
+	Events.on(engine, 'afterUpdate', function(event) {
+		engine.timing.timeScale += (.25 - engine.timing.timeScale) * 0.05;
+
+	});
+	var $shakeTimeout;
+	Events.on(engine, 'collisionStart', function(event) {
+		//clearTimeout($shakeTimeout);
+		shakeScene();
+    });
+	Events.on(engine, 'collisionEnd', function(event) {
+		//clearTimeout($shakeTimeout);
+		//$shakeTimeout = setTimeout(shakeScene, 1600);		
+    });
+    var shakeScene = function() {
+	    var forceMagnitude = .007 * shape.mass;
+		Body.applyForce(shape, shape.position, { 
+            x: (forceMagnitude + Common.random() * forceMagnitude) * Common.choose([1, -1]), 
+            y: -forceMagnitude + Common.random() * -forceMagnitude
+        });
+    };
+	shakeScene();
+}
+setupLogo();
 });
