@@ -50,12 +50,6 @@
     border-radius: 4px;
 }
 
-.plyr__video-embed iframe {
-  /* this makes the ui clickable */
-	pointer-events: all !important;
-} 
-
-
 /* Will DVD Screensaver */
 
 .marquee {
