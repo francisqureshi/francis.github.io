@@ -25,6 +25,7 @@ controls: [
           'captions', // Toggle captions
           'volume',
           'fullscreen', // Toggle fullscreen
+          'download',
          ],
 
 
