@@ -6,7 +6,8 @@ const players = Plyr.setup('.projectfilm',  {
     muted: false, 
     autoplay: false, 
     hideControls: true, 
-    loop:{ active: 'true'}, 
+    loop:{ active: 'true'},
+    debug: true,
     vimeo: {
             muted: false, 
             loop: true, 
