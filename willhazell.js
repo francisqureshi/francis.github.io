@@ -34,6 +34,14 @@ controls: [
 
 window.player = player;
 
+
+//mobile plyr fullscreen
+
+$(".vimeoplyrpreviewwrapper).on("click", function(){ vid.toggleFullscreen(); vid.play(); });
+
+
+
+
 // fq Archive Image Hover
 
 Webflow.push(function() {
