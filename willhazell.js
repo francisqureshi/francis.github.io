@@ -32,13 +32,7 @@ controls: [
 
 });// Expose player so it can be used from the console
 
-window.player = player;
-
-
-//mobile plyr fullscreen
-
-$(".vimeoplyrpreviewwrapper).on("click", function(){ vid.toggleFullscreen(); vid.play(); });
-
+window.players = player;
 
 
 
