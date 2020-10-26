@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             transparent: false, 
             controls: false },
 controls: [
+          'play-large', //big one
           'play', // Extra one for hacks 
           'play', // Play/pause playback
           'progress', // The progress bar and scrubber for playback and buffering
