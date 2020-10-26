@@ -7,7 +7,7 @@ const players = Plyr.setup('.projectfilm',  {
     autoplay: false, 
     hideControls: true, 
     loop:{ active: 'true'},
-    fullscreen: {iosNative: 'true'}
+    fullscreen: { iosNative: 'true'},
     debug: true,
     vimeo: {
             muted: false, 
