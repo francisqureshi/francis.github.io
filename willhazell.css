@@ -89,7 +89,8 @@
 
 /* Plyr big button hide/show*/
 
-.plyr__controls, .plyr__video-wrapper.plyr__video-embed {
+.plyr__controls, 
+.plyr__video-wrapper.plyr__video-embed {
     display: none;
 }
 
