@@ -1,7 +1,8 @@
-// JS WH_01.08.20 
+// JS WH_26.10.20 
 
 // Plyr
-const players = Plyr.setup('.projectfilm',  { 
+document.addEventListener('DOMContentLoaded', () => {
+            const player = Plyr.setup('.projectfilm',  { 
 
     muted: false, 
     autoplay: false, 
@@ -30,7 +31,7 @@ controls: [
           'fullscreen', // Toggle fullscreen
           'download',
          ],
-
+    });
 
 
 
