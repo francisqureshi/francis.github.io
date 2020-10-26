@@ -1,3 +1,5 @@
+/* fq CSS 26.10.2020 */
+
 /* Reset Webflow’s a color */
 .single-nav-bar a { 
 	text-decoration:inherit !important; 
@@ -84,6 +86,20 @@
 	
 }
 
+
+/* Plyr big button hide/show*/
+
+.plyr__controls, .plyr__video-wrapper.plyr__video-embed {
+    display: none;
+}
+
+.plyr__control.plyr__control--overlaid.plyr__control--pressed ~ .plyr__controls{
+	display: flex;
+}
+
+.plyr__control.plyr__control--overlaid.plyr__control--pressed ~ .plyr__video-wrapper.plyr__video-embed{
+	display: block;
+}
 
 
 
