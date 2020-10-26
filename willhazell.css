@@ -64,11 +64,11 @@
 		display:none;
 	}
 
-	body {
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
-}
+	.credit-columns {
+  		min-height: 100vh;
+  		/* mobile viewport bug fix */
+  		min-height: -webkit-fill-available;
+	}
 	
 }
 
