@@ -89,7 +89,7 @@
 
 /* Plyr big button hide/show*/
 
-.plyr__controls, 
+/* .plyr__controls, 
 .plyr__video-wrapper.plyr__video-embed {
     display: none;
 }
@@ -100,7 +100,7 @@
 
 .plyr__control.plyr__control--overlaid.plyr__control--pressed ~ .plyr__video-wrapper.plyr__video-embed{
 	display: block;
-}
+} */
 
 
 
