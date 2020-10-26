@@ -59,6 +59,14 @@
 
 /* mobile striped back controls */
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+	.credit-columns{
+	    padding-bottom: 12vh;
+	}
+
+}
+
 @media (max-width: 480px) {
 	.plyr__volume{
 		display:none;
