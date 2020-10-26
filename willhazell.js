@@ -20,6 +20,7 @@ const players = Plyr.setup('.projectfilm',  {
             transparent: false, 
             controls: false },
 controls: [
+          'play', // Extra one for hacks 
           'play', // Play/pause playback
           'progress', // The progress bar and scrubber for playback and buffering
           'current-time', // The current time of playback
