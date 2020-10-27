@@ -89,18 +89,20 @@
 
 /* Plyr big button hide/show*/
 
-/* .plyr__controls, 
+.plyr__controls{
+	display: none;
+}
 .plyr__video-wrapper.plyr__video-embed {
-    display: none;
+    	display: none;
 }
 
-.plyr__control.plyr__control--overlaid.plyr__control--pressed ~ .plyr__controls{
+.plyr__control.plyr__control--overlaid.plyr__control--pressed + .plyr__controls{
 	display: flex;
 }
 
-.plyr__control.plyr__control--overlaid.plyr__control--pressed ~ .plyr__video-wrapper.plyr__video-embed{
+.plyr__control.plyr__control--overlaid.plyr__control--pressed + .plyr__video-wrapper.plyr__video-embed{
 	display: block;
-} */
+} 
 
 
 
