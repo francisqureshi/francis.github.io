@@ -42,12 +42,11 @@ window.player = player;
 
 // fq player hide/show
 
-
-
 $(".plyr__control--overlaid").click(function(){
-  $(".plyr__video-wrapper.plyr__video-embed").attr( "style", "display: block;" );
-  $(".plyr__controls").attr( "style", "display: flex;" );
+  $(".plyr__video-wrapper").attr( "style", "display: block !important;" );
+  
 });
+
 
 // fq Archive Image Hover
 
