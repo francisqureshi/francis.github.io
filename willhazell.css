@@ -99,15 +99,6 @@ background:transparent;}
     	display: none;
 }
 
-.plyr__control.plyr__control--overlaid.plyr__control--pressed + .plyr__controls{
-	display: flex;
-}
-
-.playing-show{
-	display: block;
-} 
-
-
 
 /* Will DVD Screensaver */
 
