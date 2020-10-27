@@ -95,7 +95,7 @@ background:transparent;}
 .plyr__controls{
 	display: none;
 }
-.plyr__video-wrapper.plyr__video-embed {
+.plyr__video-wrapper {
     	display: none;
 }
 
