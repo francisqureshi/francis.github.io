@@ -40,6 +40,11 @@ controls: [
 
 window.player = player;
 
+// fq player hide/show
+
+var preceding = $('.plyr__control--pressed').prevAll().find('.plyr__video-wrapper.plyr__video-embed').last();
+$(preceding).addClass('playing-show');
+
 
 
 // fq Archive Image Hover
