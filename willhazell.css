@@ -103,7 +103,7 @@ background:transparent;}
 	display: flex;
 }
 
-.plyr__control.plyr__control--overlaid.plyr__control--pressed + .plyr__video-wrapper.plyr__video-embed{
+.playing-show{
 	display: block;
 } 
 
