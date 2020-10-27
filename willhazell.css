@@ -49,6 +49,9 @@
   --plyr-video-controls-background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
 }
 
+.plyr--video{
+background:transparent;}
+
 /* rounded borders */
 .preview-vimeo-embed video, .plyr{
     border-radius: 4px;
