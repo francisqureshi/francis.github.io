@@ -1,4 +1,4 @@
-/* fq CSS 26.10.2020 */
+/* fq CSS 05.02.2020 */
 
 /* Reset Webflow’s a color */
 .single-nav-bar a { 
@@ -35,7 +35,7 @@
  
 /*###       Cursors         ###*/
   
-.plyr__video-embed, iframe, .videodiv, .controlblocker, .previewvideo  {
+.plyr__video-embed, iframe, .videodiv, .controlblocker, .previewvideo, .previewvideomobile, .plyr__control.plyr__control--overlaid  {
   cursor: url("https://uploads-ssl.webflow.com/5e0898430d37a1428029df27/5f353fc4b89a6a4b2986a420_Play_Cursor_32x32.png"), auto !important;  
 }
 
@@ -43,26 +43,44 @@
 
 /*###       Plyr            ###*/
 
+
+.vimeoplyrpreviewwrapper{
+	visibility: visible;
+}
 /* general style */
 :root {
   --plyr-color-main: #000000;
   --plyr-video-controls-background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+
 }
 
 .plyr--video{
 background:transparent;}
 
-/* rounded borders */
+/* rounded borders 
 .preview-vimeo-embed video, .plyr{
     border-radius: 4px;
 }
+*/
+.previewvideomobile > video{ 
+    border-radius: 4px;
+}
+
+/* hide player play button */
+button.plyr__control.plyr__control--overlaid {
+   background:none;
+   width: 82vw;
+   height: 122vw;
+   opacity: 0;
+}
+
 
 /* hide vimeo/YT logo id no link is available */
 .plyr__control[href='undefined']{
     display:none;
 }
 
-/* iOS hack - Disabled 20210205
+/* iOS hack - Disabled 20210205 */
 
 @supports (-webkit-touch-callout: none) {
 	.credit-columns{
@@ -70,8 +88,6 @@ background:transparent;}
 	}
 
 }
-
-*/
 	
 /* mobile striped back controls */
 @media (max-width: 480px) {
@@ -94,13 +110,12 @@ background:transparent;}
 
 /* Plyr big button hide/show*/
 
-/* .plyr__controls{
-	display: none;
+.plyr__controls{
+	    visibility:hidden;
 }
 .plyr__video-wrapper {
-    	display: none;
-}
- */
+    	visibility:hidden;
+} 
 
 /* Will DVD Screensaver */
 
