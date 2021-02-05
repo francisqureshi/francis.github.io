@@ -1,9 +1,8 @@
-// JS WH_26.10.20 - backed up 05.02.2021
+
+// JS WH_05.02.2021
 
 // Plyr
-document.addEventListener('DOMContentLoaded', () => {
-            const player = Plyr.setup('.projectfilm',  { 
-
+const players = Array.from(document.querySelectorAll(".projectfilm")).map(player => new Plyr(player,{
     muted: false, 
     autoplay: false, 
     hideControls: true, 
@@ -31,21 +30,35 @@ controls: [
           'volume',
           'fullscreen', // Toggle fullscreen
           'download',
-         ],
+         ]}));
+Webflow.push(function() {
+
+    players.forEach(function(player) {
+        player.on('play',function(){
+        $(".plyr__video-wrapper").attr( "style","visibility: visible"),
+        $(".plyr__controls").attr( "style","visibility: visible"),
+        $(".VimeoPlyrPreviewWrapper").attr( "style","visibility: hidden")
+
+        
+        });
     });
 
+		players.forEach(function(player) {
+        player.on('pause',function(){
+        $(".plyr__video-wrapper").attr( "style","visibility: hidden"),
+        $(".plyr__controls").attr( "style","visibility: hidden"),
+        $(".VimeoPlyrPreviewWrapper").attr( "style","visibility: visible")
 
+        
+        });
+    });
 
-});// Expose player so it can be used from the console
+});
+// Expose player so it can be used from the console
 
-window.player = player;
+//window.player = player;
 
 // fq player hide/show
-
-$(".plyr__control--overlaid").click(function(){
-  $(".plyr__video-wrapper").attr( "style", "display: block !important;" );
-  
-});
 
 
 // fq Archive Image Hover
@@ -59,3 +72,4 @@ Webflow.push(function() {
     var el = $(this); el.attr('src', el.attr('data-hover-original-image'));
   });
 });
+
