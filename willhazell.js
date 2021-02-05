@@ -1,6 +1,7 @@
 
 // JS WH_05.02.2021
 
+
 // Plyr
 const players = Array.from(document.querySelectorAll(".projectfilm")).map(player => new Plyr(player,{
     muted: false, 
@@ -72,4 +73,3 @@ Webflow.push(function() {
     var el = $(this); el.attr('src', el.attr('data-hover-original-image'));
   });
 });
-
