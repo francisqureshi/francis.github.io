@@ -62,7 +62,7 @@ background:transparent;}
     display:none;
 }
 
-/* iOS hack */
+/* iOS hack - Disabled 20210205
 
 @supports (-webkit-touch-callout: none) {
 	.credit-columns{
@@ -70,6 +70,8 @@ background:transparent;}
 	}
 
 }
+
+*/
 	
 /* mobile striped back controls */
 @media (max-width: 480px) {
