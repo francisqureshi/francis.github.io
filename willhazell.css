@@ -57,11 +57,17 @@
 .plyr--video{
 background:transparent;}
 
-/* rounded borders 
+/* rounded borders for players */
+
+/*
 .preview-vimeo-embed video, .plyr{
     border-radius: 4px;
 }
 */
+
+.plyr__video-wrapper.plyr__video-embed {
+    border-radius: 4px;
+}
 
 
 .previewvideo > video{ 
