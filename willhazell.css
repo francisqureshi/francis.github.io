@@ -62,9 +62,17 @@ background:transparent;}
     border-radius: 4px;
 }
 */
+
+
+.previewvideo > video{ 
+    border-radius: 4px;
+}
+
 .previewvideomobile > video{ 
     border-radius: 4px;
 }
+
+
 
 /* hide player play button */
 button.plyr__control.plyr__control--overlaid {
